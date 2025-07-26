@@ -1,0 +1,49 @@
+.heading{
+    background: linear-gradient(rgba(18, 27, 34, 0.6), rgba(18, 27, 34, 0.6)), url("https://code-theme.com/html/findhouses/images/bg/bg-details.jpg") no-repeat center center;
+    height: 30vh;
+}
+.heading a{
+    color: #fff;
+    transition: color .4s;
+}
+.card a{
+    text-decoration: none;
+    color: #000;
+    transition: color .4s;
+}
+.heading a:hover{
+    color: var(--mainColor);
+}
+.card a:hover{
+    color: var(--mainColor);
+}
+.title::after{
+     display: block;
+    height: 3px;
+    font-weight: bold;
+    background-color: #FF385C;
+    content: " ";
+    width: 50px;
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+}
+.category .btn-group:hover .dropdown-toggle{
+    color: var(--mainColor);
+    background-color: #fff;
+}
+.category .btn-group{
+    border-radius: 0%;
+   
+}
+.category .btn-group:hover label{
+    cursor: pointer;
+    color: var(--mainColor);
+}
+.custom-btn:hover{
+  color: var(--mainColor);
+  background-color: #fff;
+  border: var(--bs-border-width) var(--bs-border-style) var(--mainColor) !important;
+}
+.custom-btn{
+ transition: .6s;
+}

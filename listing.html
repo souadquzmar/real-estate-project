@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./assests/css/main.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg border-bottom position-sticky top-0 z-3 nav2">
+        <div class="container-fluid gap-5">
+            <a class="navbar-brand" href="#">
+                <img src="./assests/img/navbar/logo-red.svg" width="60px" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav d-flex gap-5 align-items-center w-75 ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./listing.html">Listing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item left-side">
+                            <a class="nav-link" href="./contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav d-flex align-items-center gap-3 justify-content-end w-75">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-earth-americas pe-1 "></i>
+                                ENG
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                                <li><a class="dropdown-item" href="#">Francais</a></li>
+                                <li><a class="dropdown-item" href="#">Espanol</a></li>
+                                <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item custom-border">
+                            <button class="border-0 nav-link" data-bs-toggle="modal" data-bs-target="#signin">
+                                <a class="nav-link" href="#">Sign In</a>
+                            </button>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle position-relative" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="img-span">
+                                    <img src="./assests/img/navbar/ts-1.jpg" class="img-nav" />
+                                </span>
+                                Hi,Mary!
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Add Property</a></li>
+                                <li><a class="dropdown-item" href="#">Payments</a></li>
+                                <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+
+                            <button class="btn btn-mainColor ps-4 pe-4" type="submit" data-bs-toggle="modal"
+                                data-bs-target="#add-listing">
+                                Add Listing
+                                <i class="fa-solid fa-house-laptop" style="color: #ffffff"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+
+    </nav>
+    <!-- Full screen modal -->
+    <div class="modal fade" id="add-listing" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-4 fw-bold" id="exampleModalLabel">Add Listing</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Description and Price</h5>
+
+                        <form class="p-5">
+                            <div class="mb-3">
+                                <label for="property-title" class="form-label fs-14 fw-bold">Property Title</label>
+                                <input type="text" class="form-control" placeholder="Enter your property title"
+                                    id="property-title" aria-describedby="basic-addon1">
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label fs-14 fw-bold">Property Description</label>
+                                <textarea class="form-control" id="description" rows="6"
+                                    placeholder="Describe your property"></textarea>
+                            </div>
+
+                            <div class="mb-3 row g-3">
+                                <div class="col-lg-4 col-md-12">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option disabled selected>Select status</option>
+                                        <option value="1">Rent</option>
+                                        <option value="2">Sale</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option disabled selected>Type</option>
+                                        <option value="1">house</option>
+                                        <option value="2">commercial</option>
+                                        <option value="3">apartment</option>
+                                        <option value="4">lot</option>
+                                        <option value="5">garage</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option disabled selected>Rooms</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="price" class="form-label fs-14 fw-bold">Price</label>
+                                        <input type="text" class="form-control" placeholder="USD" id="price"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="area" class="form-label fs-14 fw-bold">Area</label>
+                                        <input type="text" class="form-control" placeholder="Sqft" id="area"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Media</h5>
+                        <div class="m-5 p-5 upload-listing  position-relative">
+                            <span class="d-flex flex-column gap-3 align-items-center justify-content-center">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <p>Click here or drop files to upload</p>
+                            </span>
+                            <input type="file" class="upload">
+                        </div>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Location</h5>
+                        <form class="p-5">
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="add" class="form-label fs-14 fw-bold">Address</label>
+                                        <input type="text" class="form-control" placeholder="Enter your address"
+                                            id="add" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label fs-14 fw-bold">City</label>
+                                        <input type="text" class="form-control" placeholder="Enter your city" id="city"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="state" class="form-label fs-14 fw-bold">State</label>
+                                        <input type="text" class="form-control" placeholder="Enter your state"
+                                            id="state" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="country" class="form-label fs-14 fw-bold">Country</label>
+                                        <input type="text" class="form-control" placeholder="Enter your country"
+                                            id="country" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="maps1" class="form-label fs-14 fw-bold">Google Maps latitude</label>
+                                        <input type="text" class="form-control" placeholder="Google Maps latitude"
+                                            id="maps1" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="maps2" class="form-label fs-14 fw-bold">Google Maps latitude</label>
+                                        <input type="text" class="form-control" placeholder="Google Maps latitude"
+                                            id="maps2" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Extra Information</h5>
+                        <form class="p-5 row">
+                            <div class="col-lg-4 col-md-12 mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled selected>Select Age</option>
+                                    <option value="1">0-1 years</option>
+                                    <option value="2">0-5 years</option>
+                                    <option value="3">0-10 years</option>
+                                    <option value="4">0-15 years</option>
+                                    <option value="5">0-20 years</option>
+                                    <option value="6">0-50 years</option>
+                                    <option value="7">+50 years</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled selected>Select Rooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled selected>Select Bathrooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Features</h5>
+                        <div class="services d-flex flex-wrap gap-4 p-5">
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Air Conditioning
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Swimming Pool
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Central Heating
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Laundry Room
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Gym
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Alarm
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Window Covering
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    WiFi
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    TV Cable
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Dryer
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Microwave
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Contact Information</h5>
+                        <form class="p-5">
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label fs-14 fw-bold">Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter your name" id="name"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="user" class="form-label fs-14 fw-bold">Username</label>
+                                        <input type="text" class="form-control" placeholder="Enter your username"
+                                            id="user" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label fs-14 fw-bold">Email</label>
+                                        <input type="email" class="form-control" placeholder="Enter your email"
+                                            id="email" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label fs-14 fw-bold">Phone Number</label>
+                                        <input type="text" class="form-control" placeholder="Enter your phone number"
+                                            id="phone" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-mainColor">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome to <span
+                            class="fw-bold">FIND</span><span class="fw-bold text-mainColor">HOUSES</span></h1>
+                    <button type="button" class="btn-close btn-mainColor rounded-circle" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5">
+                    <div>
+                        <h5 class="mb-3">Login</h5>
+                        <div class="d-flex flex-column gap-3">
+                            <button class="btn facebook text-white p-3">
+                                <i class="fa-brands fa-square-facebook me-2 fa-lg"></i>
+                                Log in with Facebook
+                            </button>
+                            <button class="btn twitter-btn text-white p-3">
+                                <i class="fa-brands fa-twitter me-2 fa-lg"></i>
+                                Log in with Twitter
+                            </button>
+                        </div>
+                        <span class="d-flex justify-content-center m-5">Or</span>
+                    </div>
+
+                    <nav class="nav-modal">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active me-2" id="nav-login-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-login" type="button" role="tab" aria-controls="nav-login"
+                                aria-selected="true">Login</button>
+                            <button class="nav-link" id="nav-register-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-register" type="button" role="tab" aria-controls="nav-register"
+                                aria-selected="false">Register</button>
+
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel"
+                            aria-labelledby="nav-login-tab" tabindex="0">
+                            <form class="mt-4">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label fs-13 text-body-secondary">Username or Email
+                                        Address *</label>
+                                    <input type="text" class="form-control bg-light p-3" id="username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label fs-13 text-body-secondary">Password
+                                        *</label>
+                                    <input type="password" class="form-control bg-light p-3" id="password"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <button class="btn btn-mainColor p-2 pe-4 ps-4" type="submit">Log In</button>
+                            </form>
+                            <div class="d-flex mt-4">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                    <label class="form-check-label fs-13 text-body-secondary" for="checkDefault">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <p class="flex-grow-1 d-flex justify-content-end fs-13 text-body-secondary">Lost Your
+                                    Password ?</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab"
+                            tabindex="0">
+                            <form class="mt-4">
+                                <div class="mb-3">
+                                    <label for="f-name" class="form-label fs-13 text-body-secondary">First Name
+                                        *</label>
+                                    <input type="text" class="form-control bg-light p-3" id="f-name"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="s-name" class="form-label fs-13 text-body-secondary">Second Name
+                                        *</label>
+                                    <input type="text" class="form-control bg-light p-3" id="s-name"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fs-13 text-body-secondary">Email Address
+                                        *</label>
+                                    <input type="email" class="form-control bg-light p-3" id="email"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label fs-13 text-body-secondary">Password
+                                        *</label>
+                                    <input type="password" class="form-control bg-light p-3" id="password"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <button class="btn btn-mainColor p-2 pe-4 ps-4" type="submit">Register</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="listing-search p-5">
+            <div class="container p-5">
+                <span>Home</span>
+                <span class="fs-14 fw-light">/ Listings</span>
+                <form class="row g-2 align-items-center  mt-5 mb-5 position-relative justify-content-center">
+                    <div class="col-lg-4 col-md-12">
+                        <label class="visually-hidden" for="specificSizeInputName">Name</label>
+                        <input type="text" class="form-control pt-3 pb-3" id="specificSizeInputName"
+                            placeholder="Enter keyword..." />
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                        <select class="form-select pt-3 pb-3" id="inlineFormSelectPref">
+                            <option selected>Property type</option>
+                            <option value="1">Family House</option>
+                            <option value="2">Apartment</option>
+                            <option value="3">Condo</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                        <select class="form-select pt-3 pb-3" id="inlineFormSelectPref">
+                            <option selected>Location</option>
+                            <option value="1">Los Angeles</option>
+                            <option value="2">Chicago</option>
+                            <option value="3">Philadelphia</option>
+                            <option value="4">San Francisco</option>
+                            <option value="5">Miami</option>
+                            <option value="6">Houston</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 bg-white">
+                        <button type="submit" class="btn border advanced-listing w-100 pt-3 pb-3">
+                            Advanced Search
+                        </button>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <button type="submit" class="btn btn-mainColor border w-100 pt-3 pb-3">
+                            Search Now
+                        </button>
+                    </div>
+                </form>
+                <div class="my-modal text-dark ">
+                    <form class="row g-5 align-items-center justify-content-center border-form">
+                        <div class="col-lg-4 col-sm-12">
+                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                            <select class="form-select" id="inlineFormSelectPref">
+                                <option selected>Property Status</option>
+                                <option value="1">For Sale</option>
+                                <option value="2">For Rent</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-12">
+                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                            <select class="form-select" id="inlineFormSelectPref">
+                                <option selected>Bedrooms</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-12">
+                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                            <select class="form-select" id="inlineFormSelectPref">
+                                <option selected>Bathrooms</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="size">
+                                <label for="customRange4" class="form-label">Area Size</label>
+                                <input type="range" class="form-range" min="0" max="1300" value="0" id="customRange4" />
+                                <output for="customRange4" id="rangeValue" aria-hidden="true"></output>
+
+                                <script>
+                                    const rangeInput =
+                                        document.getElementById("customRange4");
+                                    const rangeOutput =
+                                        document.getElementById("rangeValue");
+
+                                    rangeOutput.textContent = rangeInput.value + " sq ft";
+
+                                    rangeInput.addEventListener("input", function () {
+                                        rangeOutput.textContent = this.value + "sq ft";
+                                    });
+                                </script>
+                            </div>
+
+                            <div class="price">
+                                <label for="customRange" class="form-label">Price Range</label>
+                                <input type="range" class="form-range" min="0" max="600000" value="0"
+                                    id="customRange" />
+                                <output for="customRange" id="rangeValue1" aria-hidden="true"></output>
+
+                                <script>
+                                    const rangeInput2 =
+                                        document.getElementById("customRange");
+                                    const rangeOutput2 =
+                                        document.getElementById("rangeValue1");
+
+                                    rangeOutput2.textContent = "$" + rangeInput2.value;
+
+                                    rangeInput2.addEventListener("input", function () {
+                                        rangeOutput2.textContent = "$" + this.value;
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class=" col-lg-6 col-sm-12 services d-flex flex-wrap">
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Air Conditioning
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Swimming Pool
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Central Heating
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Laundry Room
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Gym
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Alarm
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Window Covering
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    WiFi
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    TV Cable
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Dryer
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Microwave
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Washer
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Refrigerator
+                                </label>
+                            </div>
+                            <div class="form-check col-lg-6 col-sm-12 w-50">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Outdoor Shower
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="properties mb-3">
+                    <div class="d-flex align-items-center mb-5">
+                        <span>6 search results</span>
+                        <div class="dropdown flex-grow-1 d-flex justify-content-end">
+                            <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-arrow-up-wide-short white-hover"></i>
+                                SORTBY
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Top Selling</a></li>
+                                <li><a class="dropdown-item" href="#">Most Viewed</a></li>
+                                <li><a class="dropdown-item" href="#">Price (low to high)</a></li>
+                                <li><a class="dropdown-item" href="#">Price (high to low)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-1  g-4">
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-lg-4  col-md-6 position-relative">
+                                        <span class="position-absolute btn-mainColor p-2 m-3 rounded-2">Featured</span>
+                                        <span
+                                            class="position-absolute bg-grey p-2 m-3 rounded-1 end-0 text-white ps-3 pe-3 ">For
+                                            Sale</span>
+                                        <img src="assests/img/featured-properties/b-11.jpg"
+                                            class="img-fluid rounded-start " alt="..." />
+                                        <span
+                                            class="position-absolute bottom-0 start-0 text-white fs-5 p-3">$9,000/mo</span>
+                                        <div class="d-flex g-2 position-absolute end-0 bottom-0 me-2">
+                                            <i class="fa-solid fa-link bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-video bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-image bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-6">
+                                        <div class="card-body d-flex flex-column gap-3">
+                                            <h5 class="card-title text-hover">
+                                                <a href="./property.html" class="text-decoration-none">Real Luxury
+                                                    Family House Villa</a>
+                                            </h5>
+                                            <p class="card-text">
+                                                <i class="fa-solid fa-location-dot fa-sm me-1"
+                                                    style="color: #7d838c"></i>
+                                                Est St, 77 - Central Park South, NYC
+                                            </p>
+                                            <div class="row row-cols-2 border-bottom ms-2 me-2">
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bed fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bedrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bath fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bathrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-ruler-combined fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        720 sq ft
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-car fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        2 Garages
+                                                    </small>
+                                                </p>
+                                            </div>
+
+                                            <div class="row row-cols-2 text-body-secondary ">
+                                                <p class="card-text col-6 fs-14">
+                                                    <img src="./assests/img/clients/c-5.jpg" class="rounded-circle "
+                                                        height="55px" />
+                                                    Lisa Jhonson
+                                                </p>
+                                                <p
+                                                    class="card-text col-6 fs-14 mb-3 flex-grow-1 d-flex gap-2 justify-content-end align-items-center">
+                                                    <i class="fa-solid fa-calendar-days fa-sm"
+                                                        style="color: #696969;"></i>
+                                                    2 months ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card mb-3 ">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4 position-relative ">
+                                        <span class="position-absolute btn-mainColor p-2 m-3 rounded-2">Featured</span>
+                                        <span
+                                            class="position-absolute bg-grey p-2 m-3 rounded-1 end-0 text-white ps-3 pe-3 ">For
+                                            Sale</span>
+                                        <img src="assests/img/featured-properties/b-12.jpg"
+                                            class="img-fluid rounded-start " alt="..." />
+                                        <span
+                                            class="position-absolute bottom-0 start-0 text-white fs-5 p-3">$3,000/mo</span>
+                                        <div class="d-flex g-2 position-absolute end-0 bottom-0 me-2">
+                                            <i class="fa-solid fa-link bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-video bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-image bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body d-flex flex-column gap-3">
+                                            <h5 class="card-title text-hover">
+                                                <a href="./property.html" class="text-decoration-none">Real Luxury
+                                                    Family House Villa</a>
+                                            </h5>
+                                            <p class="card-text">
+                                                <i class="fa-solid fa-location-dot fa-sm me-1"
+                                                    style="color: #7d838c"></i>
+                                                Est St, 77 - Central Park South, NYC
+                                            </p>
+                                            <div class="row row-cols-2 border-bottom ms-2 me-2">
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bed fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bedrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bath fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bathrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-ruler-combined fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        720 sq ft
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-car fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        2 Garages
+                                                    </small>
+                                                </p>
+                                            </div>
+
+                                            <div class="row row-cols-2 text-body-secondary ">
+                                                <p class="card-text col-4 fs-14">
+                                                    <img src="./assests/img/clients/c-6.jpg" class="rounded-circle "
+                                                        height="55px" />
+                                                    Karl Smith
+                                                </p>
+                                                <p
+                                                    class="card-text col-8 fs-14 mb-3 flex-grow-1 d-flex gap-2 justify-content-end align-items-center">
+                                                    <i class="fa-solid fa-calendar-days fa-sm"
+                                                        style="color: #696969;"></i>
+                                                    2 months ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4 position-relative">
+                                        <span class="position-absolute btn-mainColor p-2 m-3 rounded-2">Featured</span>
+                                        <span
+                                            class="position-absolute bg-grey p-2 m-3 rounded-1 end-0 text-white ps-3 pe-3 ">For
+                                            Sale</span>
+                                        <img src="assests/img/featured-properties/b-1.jpg"
+                                            class="img-fluid rounded-start" alt="..." />
+                                        <span
+                                            class="position-absolute bottom-0 start-0 text-white fs-5 p-3">$9,000/mo</span>
+                                        <div class="d-flex g-2 position-absolute end-0 bottom-0 me-2">
+                                            <i class="fa-solid fa-link bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-video bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-image bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body d-flex flex-column gap-3">
+                                            <h5 class="card-title text-hover">
+                                                <a href="./property.html" class="text-decoration-none">Real Luxury
+                                                    Family House Villa</a>
+                                            </h5>
+                                            <p class="card-text">
+                                                <i class="fa-solid fa-location-dot fa-sm me-1"
+                                                    style="color: #7d838c"></i>
+                                                Est St, 77 - Central Park South, NYC
+                                            </p>
+                                            <div class="row row-cols-2 border-bottom ms-2 me-2">
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bed fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bedrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bath fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bathrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-ruler-combined fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        720 sq ft
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-car fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        2 Garages
+                                                    </small>
+                                                </p>
+                                            </div>
+
+                                            <div class="row row-cols-2 text-body-secondary ">
+                                                <p class="card-text col-4 fs-14">
+                                                    <img src="./assests/img/clients/c-1.jpg" class="rounded-circle "
+                                                        height="55px" />
+                                                    katy Teddy
+                                                </p>
+                                                <p
+                                                    class="card-text col-8 fs-14 mb-3 flex-grow-1 d-flex gap-2 justify-content-end align-items-center">
+                                                    <i class="fa-solid fa-calendar-days fa-sm"
+                                                        style="color: #696969;"></i>
+                                                    2 months ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card mb-3 ">
+                                <div class="row g-0 h-100">
+                                    <div class="col-md-4 position-relative ">
+                                        <span class="position-absolute btn-mainColor p-2 m-3 rounded-2">Featured</span>
+                                        <span
+                                            class="position-absolute bg-grey p-2 m-3 rounded-1 end-0 text-white ps-3 pe-3 ">For
+                                            Sale</span>
+                                        <img src="assests/img/featured-properties/fp-10.jpg"
+                                            class="img-fluid rounded-start " alt="..." />
+                                        <span
+                                            class="position-absolute bottom-0 start-0 text-white fs-5 p-3">$3,000/mo</span>
+                                        <div class="d-flex g-2 position-absolute end-0 bottom-0 me-2">
+                                            <i class="fa-solid fa-link bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-video bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-image bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body d-flex flex-column gap-3">
+                                            <h5 class="card-title text-hover">
+                                                <a href="./property.html" class="text-decoration-none">Real Luxury
+                                                    Family House Villa</a>
+                                            </h5>
+                                            <p class="card-text">
+                                                <i class="fa-solid fa-location-dot fa-sm me-1"
+                                                    style="color: #7d838c"></i>
+                                                Est St, 77 - Central Park South, NYC
+                                            </p>
+                                            <div class="row row-cols-2 border-bottom ms-2 me-2">
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bed fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bedrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bath fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bathrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-ruler-combined fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        720 sq ft
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-car fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        2 Garages
+                                                    </small>
+                                                </p>
+                                            </div>
+
+                                            <div class="row row-cols-2 text-body-secondary ">
+                                                <p class="card-text col-4 fs-14">
+                                                    <img src="./assests/img/clients/c-2.jpg" class="rounded-circle "
+                                                        height="55px" />
+                                                    Jhon Malon
+                                                </p>
+                                                <p
+                                                    class="card-text col-8 fs-14 mb-3 flex-grow-1 d-flex gap-2 justify-content-end align-items-center">
+                                                    <i class="fa-solid fa-calendar-days fa-sm"
+                                                        style="color: #696969;"></i>
+                                                    2 months ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4 position-relative">
+                                        <span class="position-absolute btn-mainColor p-2 m-3 rounded-2">Featured</span>
+                                        <span
+                                            class="position-absolute bg-grey p-2 m-3 rounded-1 end-0 text-white ps-3 pe-3 ">For
+                                            Sale</span>
+                                        <img src="assests/img/featured-properties/fp-11.jpg"
+                                            class="img-fluid rounded-start" alt="..." />
+                                        <span
+                                            class="position-absolute bottom-0 start-0 text-white fs-5 p-3">$9,000/mo</span>
+                                        <div class="d-flex g-2 position-absolute end-0 bottom-0 me-2">
+                                            <i class="fa-solid fa-link bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-video bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-image bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body d-flex flex-column gap-3">
+                                            <h5 class="card-title text-hover">
+                                                <a href="./property.html" class="text-decoration-none">Real Luxury
+                                                    Family House Villa</a>
+                                            </h5>
+                                            <p class="card-text">
+                                                <i class="fa-solid fa-location-dot fa-sm me-1"
+                                                    style="color: #7d838c"></i>
+                                                Est St, 77 - Central Park South, NYC
+                                            </p>
+                                            <div class="row row-cols-2 border-bottom ms-2 me-2">
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bed fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bedrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bath fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bathrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-ruler-combined fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        720 sq ft
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-car fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        2 Garages
+                                                    </small>
+                                                </p>
+                                            </div>
+
+                                            <div class="row row-cols-2 text-body-secondary ">
+                                                <p class="card-text col-4 fs-14">
+                                                    <img src="./assests/img/clients/c-3.jpg" class="rounded-circle "
+                                                        height="55px" />
+                                                    Susan Delman
+                                                </p>
+                                                <p
+                                                    class="card-text col-8 fs-14 mb-3 flex-grow-1 d-flex gap-2 justify-content-end align-items-center">
+                                                    <i class="fa-solid fa-calendar-days fa-sm"
+                                                        style="color: #696969;"></i>
+                                                    2 months ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4 position-relative">
+                                        <span class="position-absolute btn-mainColor p-2 m-3 rounded-2">Featured</span>
+                                        <span
+                                            class="position-absolute bg-grey p-2 m-3 rounded-1 end-0 text-white ps-3 pe-3 ">For
+                                            Sale</span>
+                                        <img src="assests/img/featured-properties/fp-12.jpg"
+                                            class="img-fluid rounded-start" alt="..." />
+                                        <span
+                                            class="position-absolute bottom-0 start-0 text-white fs-5 p-3">$3,000/mo</span>
+                                        <div class="d-flex g-2 position-absolute end-0 bottom-0 me-2">
+                                            <i class="fa-solid fa-link bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-video bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                            <i class="fa-solid fa-image bg-grey rounded-2 p-2 m-2" role="button"
+                                                style="color: #ffffff"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body d-flex flex-column gap-3">
+                                            <h5 class="card-title text-hover">
+                                                <a href="./property.html" class="text-decoration-none">Real Luxury
+                                                    Family House Villa</a>
+                                            </h5>
+                                            <p class="card-text">
+                                                <i class="fa-solid fa-location-dot fa-sm me-1"
+                                                    style="color: #7d838c"></i>
+                                                Est St, 77 - Central Park South, NYC
+                                            </p>
+                                            <div class="row row-cols-2 border-bottom ms-2 me-2">
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bed fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bedrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-bath fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        6 Bathrooms
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-ruler-combined fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        720 sq ft
+                                                    </small>
+                                                </p>
+                                                <p class="card-text d-flex justify-content-start">
+                                                    <small class="text-body-secondary">
+                                                        <i class="fa-solid fa-car fa-sm me-1"
+                                                            style="color: #94989e"></i>
+                                                        2 Garages
+                                                    </small>
+                                                </p>
+                                            </div>
+
+                                            <div class="row row-cols-2 text-body-secondary ">
+                                                <p class="card-text col-4 fs-14">
+                                                    <img src="./assests/img/clients/c-4.jpg" class="rounded-circle "
+                                                        height="55px" />
+                                                    Chan Lee
+                                                </p>
+                                                <p
+                                                    class="card-text col-8 fs-14 mb-3 flex-grow-1 d-flex gap-2 justify-content-end align-items-center">
+                                                    <i class="fa-solid fa-calendar-days fa-sm"
+                                                        style="color: #696969;"></i>
+                                                    2 months ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link text-dark" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link text-white bg-mainColor mainColor-hover"
+                                href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link text-dark" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container-fluid pt-5 pb-5">
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 d-flex gap-4 flex-column">
+                    <div>
+                        <img src="./assests/img/footer/logo-footer.svg" width="180px" />
+                    </div>
+                    <p class="fs-15">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
+                        incidunt architecto soluta laboriosam, perspiciatis, aspernatur
+                        officiis esse.
+                    </p>
+                    <div>
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-location-dot fa-sm " style="color: #ff385c;"></i>
+                            <p class="fs-15">95 South Park Avenue, USA</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-phone fa-sm" style="color: #ff385c;"></i>
+                            <p class="fs-15">+456 875 369 208</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-envelope fa-sm" style="color: #ff385c;"></i>
+                            <p class="fs-15">support@findhouses.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+
+                    <h5 class="fw-bold text-white border-mainColor fs-18 mb-4 navigation">Navigation</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="col-12">
+                                <li class="border-dotted fs-14">Home One</li>
+                                <li class="border-dotted fs-14 ">Properties Right</li>
+                                <li class="border-dotted fs-14 ">Properties List</li>
+                                <li class="border-dotted fs-14 ">Property Detail</li>
+                                <li class="border-dotted fs-14 ">Agents Listing</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li class="border-dotted fs-14 ">Agents Details</li>
+                                <li class="border-dotted fs-14 ">About Us</li>
+                                <li class="border-dotted fs-14">Blog Default</li>
+                                <li class="border-dotted fs-14 ">Blog Details</li>
+                                <li class="border-dotted fs-14 ">Contact Us</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fw-bold text-white fs-18 mb-4 twitter">Twitter Feeds</h5>
+                    <div>
+
+                        <div class="d-flex flex-column ">
+                            <div class="d-flex gap-1">
+                                <i class="fa-brands fa-twitter fa-sm" style="color: #ff385c;"></i>
+                                <p class="fs-14">
+                                    <a href="#">@Findhouses</a>
+                                    All share them with me baby said inspet.
+                                </p>
+                            </div>
+                            <p class="text-mainColor fw-bold fs-15 ms-4">about 5 days ago</p>
+                        </div>
+
+                        <div class="d-flex flex-column ">
+                            <div class="d-flex gap-1">
+                                <i class="fa-brands fa-twitter fa-sm" style="color: #ff385c;"></i>
+                                <p class="fs-14">
+                                    <a href="#">@Findhouses</a>
+                                    All share them with me baby said inspet.
+                                </p>
+                            </div>
+                            <p class="text-mainColor fw-bold fs-15 ms-4">about 5 days ago</p>
+                        </div>
+
+                        <div class="d-flex flex-column ">
+                            <div class="d-flex gap-1">
+                                <i class="fa-brands fa-twitter fa-sm" style="color: #ff385c;"></i>
+                                <p class="fs-14">
+                                    <a href="#">@Findhouses</a>
+                                    All share them with me baby said inspet.
+                                </p>
+                            </div>
+                            <p class="text-mainColor fw-bold fs-15 ms-4">about 5 days ago</p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fw-bold text-white fs-18 mb-4 newsletters">Newsletters</h5>
+                    <p class="mb-4">Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive
+                        news in your inbox.</p>
+                    <form class="d-flex">
+                        <input type="email" placeholder="Enter Your Email" class="p-2 email-input" />
+                        <button class="btn-mainColor subscribe fs-14">SUBSCRIBE</button>
+                    </form>
+                </div>
+
+                <div class="border-top border-dark-subtle d-flex footer-nav pt-4 flex-wrap justify-content-between">
+                    <p class="text-white fs-14 mt-2">2021 © Copyright - All Rights Reserved.</p>
+                    <div class="d-flex gap-4 icons me-5">
+                        <a href="#" class="mt-2"><i class="fa-brands fa-facebook-f " style="color: #ffffff;"></i></a>
+                        <a href="#" class="twitter-a"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></a>
+                        <a href="#" class="mt-2"><i class="fa-brands fa-instagram " style="color: #ffffff;"></i></a>
+                        <a href="#" class="mt-2"><i class="fa-brands fa-youtube " style="color: #ffffff;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assests/js/listing.js"></script>
+</body>
+
+</html>

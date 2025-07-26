@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assests/css/main.css" />
+    <link rel="stylesheet" href="./assests/css/about.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg border-bottom position-sticky top-0 z-3 nav2">
+        <div class="container-fluid gap-5">
+            <a class="navbar-brand" href="#">
+                <img src="./assests/img/navbar/logo-red.svg" width="60px" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav d-flex gap-5 align-items-center w-75 ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./listing.html">Listing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item left-side">
+                            <a class="nav-link" href="./contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav d-flex align-items-center gap-3 justify-content-end w-75">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-earth-americas pe-1 "></i>
+                                ENG
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                                <li><a class="dropdown-item" href="#">Francais</a></li>
+                                <li><a class="dropdown-item" href="#">Espanol</a></li>
+                                <li><a class="dropdown-item" href="#">Deutsch</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item custom-border">
+                            <button class="border-0 nav-link" data-bs-toggle="modal" data-bs-target="#signin">
+                                <a class="nav-link" href="#">Sign In</a>
+                            </button>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle position-relative" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="img-span">
+                                    <img src="./assests/img/navbar/ts-1.jpg" class="img-nav" />
+                                </span>
+                                Hi,Mary!
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Add Property</a></li>
+                                <li><a class="dropdown-item" href="#">Payments</a></li>
+                                <li><a class="dropdown-item" href="#">Change Password</a></li>
+                                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+
+                            <button class="btn btn-mainColor ps-4 pe-4" type="submit" data-bs-toggle="modal"
+                                data-bs-target="#add-listing">
+                                Add Listing
+                                <i class="fa-solid fa-house-laptop" style="color: #ffffff"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+
+    </nav>
+    <!-- Full screen modal -->
+    <div class="modal fade" id="add-listing" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-4 fw-bold" id="exampleModalLabel">Add Listing</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Description and Price</h5>
+
+                        <form class="p-5">
+                            <div class="mb-3">
+                                <label for="property-title" class="form-label fs-14 fw-bold">Property Title</label>
+                                <input type="text" class="form-control" placeholder="Enter your property title"
+                                    id="property-title" aria-describedby="basic-addon1">
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label fs-14 fw-bold">Property Description</label>
+                                <textarea class="form-control" id="description" rows="6"
+                                    placeholder="Describe your property"></textarea>
+                            </div>
+
+                            <div class="mb-3 row g-3">
+                                <div class="col-lg-4 col-md-12">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option disabled selected>Select status</option>
+                                        <option value="1">Rent</option>
+                                        <option value="2">Sale</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option disabled selected>Type</option>
+                                        <option value="1">house</option>
+                                        <option value="2">commercial</option>
+                                        <option value="3">apartment</option>
+                                        <option value="4">lot</option>
+                                        <option value="5">garage</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option disabled selected>Rooms</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="price" class="form-label fs-14 fw-bold">Price</label>
+                                        <input type="text" class="form-control" placeholder="USD" id="price"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="area" class="form-label fs-14 fw-bold">Area</label>
+                                        <input type="text" class="form-control" placeholder="Sqft" id="area"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Media</h5>
+                        <div class="m-5 p-5 upload-listing  position-relative">
+                            <span class="d-flex flex-column gap-3 align-items-center justify-content-center">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <p>Click here or drop files to upload</p>
+                            </span>
+                            <input type="file" class="upload">
+                        </div>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Location</h5>
+                        <form class="p-5">
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="add" class="form-label fs-14 fw-bold">Address</label>
+                                        <input type="text" class="form-control" placeholder="Enter your address"
+                                            id="add" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label fs-14 fw-bold">City</label>
+                                        <input type="text" class="form-control" placeholder="Enter your city" id="city"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="state" class="form-label fs-14 fw-bold">State</label>
+                                        <input type="text" class="form-control" placeholder="Enter your state"
+                                            id="state" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="country" class="form-label fs-14 fw-bold">Country</label>
+                                        <input type="text" class="form-control" placeholder="Enter your country"
+                                            id="country" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="maps1" class="form-label fs-14 fw-bold">Google Maps latitude</label>
+                                        <input type="text" class="form-control" placeholder="Google Maps latitude"
+                                            id="maps1" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="maps2" class="form-label fs-14 fw-bold">Google Maps latitude</label>
+                                        <input type="text" class="form-control" placeholder="Google Maps latitude"
+                                            id="maps2" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Extra Information</h5>
+                        <form class="p-5 row">
+                            <div class="col-lg-4 col-md-12 mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled selected>Select Age</option>
+                                    <option value="1">0-1 years</option>
+                                    <option value="2">0-5 years</option>
+                                    <option value="3">0-10 years</option>
+                                    <option value="4">0-15 years</option>
+                                    <option value="5">0-20 years</option>
+                                    <option value="6">0-50 years</option>
+                                    <option value="7">+50 years</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled selected>Select Rooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled selected>Select Bathrooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Property Features</h5>
+                        <div class="services d-flex flex-wrap gap-4 p-5">
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Air Conditioning
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Swimming Pool
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Central Heating
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Laundry Room
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Gym
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Alarm
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Window Covering
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    WiFi
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    TV Cable
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Dryer
+                                </label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                <label class="form-check-label" for="checkDefault">
+                                    Microwave
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="border p-5 shadow m-5">
+                        <h5 class="text-mainColor border-bottom pb-4">Contact Information</h5>
+                        <form class="p-5">
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label fs-14 fw-bold">Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter your name" id="name"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="user" class="form-label fs-14 fw-bold">Username</label>
+                                        <input type="text" class="form-control" placeholder="Enter your username"
+                                            id="user" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 g-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label fs-14 fw-bold">Email</label>
+                                        <input type="email" class="form-control" placeholder="Enter your email"
+                                            id="email" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label fs-14 fw-bold">Phone Number</label>
+                                        <input type="text" class="form-control" placeholder="Enter your phone number"
+                                            id="phone" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-mainColor">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Welcome to <span
+                            class="fw-bold">FIND</span><span class="fw-bold text-mainColor">HOUSES</span></h1>
+                    <button type="button" class="btn-close btn-mainColor rounded-circle" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5">
+                    <div>
+                        <h5 class="mb-3">Login</h5>
+                        <div class="d-flex flex-column gap-3">
+                            <button class="btn facebook text-white p-3">
+                                <i class="fa-brands fa-square-facebook me-2 fa-lg"></i>
+                                Log in with Facebook
+                            </button>
+                            <button class="btn twitter-btn text-white p-3">
+                                <i class="fa-brands fa-twitter me-2 fa-lg"></i>
+                                Log in with Twitter
+                            </button>
+                        </div>
+                        <span class="d-flex justify-content-center m-5">Or</span>
+                    </div>
+
+                    <nav class="nav-modal">
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active me-2" id="nav-login-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-login" type="button" role="tab" aria-controls="nav-login"
+                                aria-selected="true">Login</button>
+                            <button class="nav-link" id="nav-register-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-register" type="button" role="tab" aria-controls="nav-register"
+                                aria-selected="false">Register</button>
+
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-login" role="tabpanel"
+                            aria-labelledby="nav-login-tab" tabindex="0">
+                            <form class="mt-4">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label fs-13 text-body-secondary">Username or Email
+                                        Address *</label>
+                                    <input type="text" class="form-control bg-light p-3" id="username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label fs-13 text-body-secondary">Password
+                                        *</label>
+                                    <input type="password" class="form-control bg-light p-3" id="password"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <button class="btn btn-mainColor p-2 pe-4 ps-4" type="submit">Log In</button>
+                            </form>
+                            <div class="d-flex mt-4">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                                    <label class="form-check-label fs-13 text-body-secondary" for="checkDefault">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <p class="flex-grow-1 d-flex justify-content-end fs-13 text-body-secondary">Lost Your
+                                    Password ?</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab"
+                            tabindex="0">
+                            <form class="mt-4">
+                                <div class="mb-3">
+                                    <label for="f-name" class="form-label fs-13 text-body-secondary">First Name
+                                        *</label>
+                                    <input type="text" class="form-control bg-light p-3" id="f-name"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="s-name" class="form-label fs-13 text-body-secondary">Second Name
+                                        *</label>
+                                    <input type="text" class="form-control bg-light p-3" id="s-name"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fs-13 text-body-secondary">Email Address
+                                        *</label>
+                                    <input type="email" class="form-control bg-light p-3" id="email"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label fs-13 text-body-secondary">Password
+                                        *</label>
+                                    <input type="password" class="form-control bg-light p-3" id="password"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <button class="btn btn-mainColor p-2 pe-4 ps-4" type="submit">Register</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <header class="heading d-flex flex-column align-items-center justify-content-end pb-4">
+        <h1 class="text-white fw-bold fs-2">About Our Company</h1>
+        <h2 class="text-white fw-bold fs-5">
+            <a href="./index.html" class="text-decoration-none">Home</a>
+            / About Us
+        </h2>
+    </header>
+
+    <main>
+        <section class="about-us">
+            <div class="container p-5">
+                <div class="row pt-5">
+                    <div class="col-lg-5 offset-lg-1 d-flex flex-column gap-3 mb-3">
+                        <div class="title">
+                            <h2 class="fw-bold">ABOUT <span class="text-mainColor">FIND HOUSES</span></h2>
+                        </div>
+                        <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id
+                            voluptatibus
+                            incidunt cum? Atque quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio
+                            rerum aperiam ratione, sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit sunt.
+                        </p>
+                        <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum odio id
+                            voluptatibus
+                            incidunt cum? Atque quasi eum debitis optio ab. Esse itaque officiis tempora possimus odio
+                            rerum aperiam ratione, sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit sunt.
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn w-100 border h-100">READ MORE</button>
+                            </div>
+                            <div class="col-6">
+                                <img src="./assests/img/about-us/signature.png" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <iframe width="560" height="100%"
+                            src="https://www.youtube.com/embed/2xHQqYRcrx4?si=VJeZYrG35O8v63eH"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="choose-us pt-4 pb-4">
+            <div class="container-fluid text-center pt-5 pb-5">
+                <h2 class="mb-3"><span class="text-mainColor">WHY</span> CHOOSE US</h2>
+                <p class="mb-5">We provide full service at every step</p>
+
+                <div class="row g-4 d-flex justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card mb-3 d-flex flex-column align-items-center justify-content-center">
+                            <img src="./assests/img/choose-us/icon-1.svg" class="card-img-top w-25 m-4" alt="..." />
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <h5 class="card-title mb-4 fw-bold fs-5">
+                                    Wide Renge Of Properties
+                                </h5>
+                                <p class="card-text text-center mb-3 fw-light fs-6">
+                                    lorem ipsum dolor sit amet, consectetur pro adipisici
+                                    consectetur debits adipisicing lacus consectetur Business
+                                    Directory.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card mb-3 d-flex flex-column align-items-center justify-content-center">
+                            <img src="./assests/img/choose-us/icon-2.svg" class="card-img-top w-25 m-4" alt="..." />
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <h5 class="card-title mb-4 fw-bold fs-5">
+                                    Trusted by thousands
+                                </h5>
+                                <p class="card-text text-center mb-3 fw-light fs-6">
+                                    lorem ipsum dolor sit amet, consectetur pro adipisici
+                                    consectetur debits adipisicing lacus consectetur Business
+                                    Directory.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card mb-3 d-flex flex-column align-items-center justify-content-center">
+                            <img src="./assests/img/choose-us/icon-3.svg" class="card-img-top w-25 m-4" alt="..." />
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <h5 class="card-title mb-4 fw-bold fs-5">
+                                    Financing made easy
+                                </h5>
+                                <p class="card-text text-center mb-3 fw-light fs-6">
+                                    lorem ipsum dolor sit amet, consectetur pro adipisici
+                                    consectetur debits adipisicing lacus consectetur Business
+                                    Directory.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center justify-content-center gap-3">
+                        <i class="fa-solid fa-house-chimney text-mainColor icon"></i>
+                        <div class="d-flex flex-column mt-3 justify-content-center fw-bold">
+                            <span id="home-counter" class="fs-4">0</span>
+                            <p>Sold Houses</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center justify-content-center gap-3">
+                        <i class="fa-solid fa-list text-mainColor icon"></i>
+                        <div class="d-flex flex-column mt-3 justify-content-center fw-bold">
+                            <span id="listing-counter" class="fs-4">0</span>
+                            <p>Daily Listings</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center justify-content-center gap-3">
+                        <i class="fa-solid fa-users text-mainColor icon"></i>
+                        <div class="d-flex flex-column mt-3 justify-content-center fw-bold">
+                            <span id="users-counter" class="fs-4">0</span>
+                            <p>Expert Agents</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-center justify-content-center gap-3">
+                        <i class="fa-solid fa-trophy text-mainColor icon"></i>
+                        <div class="d-flex flex-column mt-3 justify-content-center fw-bold">
+                            <span id="awards-counter" class="fs-4">0</span>
+                            <p>Won Awards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team pb-5">
+            <div class="container text-center p-5 d-flex align-items-center flex-column">
+                <h2 class="mb-3"><span class="text-mainColor">OUR</span> TEAM</h2>
+                <p class="mb-5">We provide full service at every step</p>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-5 pb-5">
+                        <div class="card position-relative">
+                            <img src="./assests/img/agents/t-1.jpg" class="card-img-top" alt="..." />
+                            <div class="card-body text-center position-absolute bg-white">
+                                <h5 class="card-title fw-bold fs-18">Carls Jhons</h5>
+                                <p class="card-text fs-15">Financial Advisor</p>
+                                <div class="info">
+                                    <div class="d-flex gap-3 justify-content-center">
+                                        <i class="fa-brands fa-square-facebook fs-3" style="color: #3b5998;"></i>
+                                        <i class="fa-brands fa-square-twitter fs-3" style="color: #1da1f2"></i>
+                                        <i class="fa-brands fa-square-instagram fs-3" style="color: #e1306c"></i>
+                                    </div>
+                                    <p class="fs-13">VIEW PROFILE</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-5 pb-5">
+                        <div class="card position-relative">
+                            <img src="./assests/img/agents/t-2.jpg" class="card-img-top" alt="..." />
+                            <div class="card-body text-center position-absolute bg-white">
+                                <h5 class="card-title fw-bold fs-18">Arling Tracy</h5>
+                                <p class="card-text fs-15">Acountant</p>
+                                <div class="info">
+                                    <div class="d-flex gap-3 justify-content-center">
+                                        <i class="fa-brands fa-square-facebook fs-3" style="color: #3b5998;"></i>
+                                        <i class="fa-brands fa-square-twitter fs-3" style="color: #1da1f2"></i>
+                                        <i class="fa-brands fa-square-instagram fs-3" style="color: #e1306c"></i>
+                                    </div>
+                                    <p class="fs-13">VIEW PROFILE</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-5 pb-5">
+                        <div class="card position-relative">
+                            <img src="./assests/img/agents/t-3.jpg" class="card-img-top" alt="..." />
+                            <div class="card-body text-center position-absolute bg-white">
+                                <h5 class="card-title fw-bold fs-18">Mark Web</h5>
+                                <p class="card-text fs-15">Founder & CEO</p>
+                                <div class="info">
+                                    <div class="d-flex gap-3 justify-content-center">
+                                        <i class="fa-brands fa-square-facebook fs-3" style="color: #3b5998;"></i>
+                                        <i class="fa-brands fa-square-twitter fs-3" style="color: #1da1f2"></i>
+                                        <i class="fa-brands fa-square-instagram fs-3" style="color: #e1306c"></i>
+                                    </div>
+                                    <p class="fs-13">VIEW PROFILE</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-5 pb-5">
+                        <div class="card position-relative">
+                            <img src="./assests/img/agents/t-4.jpg" class="card-img-top" alt="..." />
+                            <div class="card-body text-center position-absolute bg-white">
+                                <h5 class="card-title fw-bold fs-18">Katy Grace</h5>
+                                <p class="card-text fs-15">Team Leader</p>
+                                <div class="info">
+                                    <div class="d-flex gap-3 justify-content-center">
+                                        <i class="fa-brands fa-square-facebook fs-3" style="color: #3b5998;"></i>
+                                        <i class="fa-brands fa-square-twitter fs-3" style="color: #1da1f2"></i>
+                                        <i class="fa-brands fa-square-instagram fs-3" style="color: #e1306c"></i>
+                                    </div>
+                                    <p class="fs-13">VIEW PROFILE</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients">
+            <div class="container text-center p-5">
+                <h2 class="mb-3"><span class="text-mainColor">CLIENTS</span> TESTIMONIALS</h2>
+                <p class="mb-5">We collect reviews from our customers.</p>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide d-flex flex-column align-items-center justify-content-center ">
+                            <img src="./assests/img/clients/c-5.jpg" class="rounded-circle mb-2" />
+                            <h5 class="text-mainColor fs-6 fw-bold">Lisa Smith</h5>
+                            <p class="fs-14">New York</p>
+                            <ul class="list-inline d-flex justify-content-end gap-1">
+                                <li class="list-inline-item m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                            </ul>
+                            <i class="fa-solid fa-quote-left text-mainColor fs-3"></i>
+                            <p class="fs-14 w-50">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis
+                                donec, suscipit tortor et sapien donec.</p>
+                        </div>
+
+                        <div class="swiper-slide d-flex flex-column align-items-center justify-content-center ">
+                            <img src="./assests/img/clients/c-6.jpg" class="rounded-circle mb-2" />
+                            <h5 class="text-mainColor fs-6 fw-bold">Jhon Morris</h5>
+                            <p class="fs-14">Los Angeles</p>
+                            <ul class="list-inline d-flex justify-content-end gap-1">
+                                <li class="list-inline-item m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="far fa-star fa-xs text-mainColor"></i>
+                                </li>
+                            </ul>
+                            <i class="fa-solid fa-quote-left text-mainColor fs-3"></i>
+                            <p class="fs-14 w-50">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis
+                                donec, suscipit tortor et sapien donec.</p>
+                        </div>
+
+                        <div class="swiper-slide d-flex flex-column align-items-center justify-content-center ">
+                            <img src="./assests/img/clients/c-1.jpg" class="rounded-circle mb-2" />
+                            <h5 class="text-mainColor fs-6 fw-bold">Mary Deshaw</h5>
+                            <p class="fs-14">Chicago</p>
+                            <ul class="list-inline d-flex justify-content-end gap-1">
+                                <li class="list-inline-item m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                            </ul>
+                            <i class="fa-solid fa-quote-left text-mainColor fs-3"></i>
+                            <p class="fs-14 w-50">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis
+                                donec, suscipit tortor et sapien donec.</p>
+                        </div>
+
+                        <div class="swiper-slide d-flex flex-column align-items-center justify-content-center ">
+                            <img src="./assests/img/clients/c-2.jpg" class="rounded-circle mb-2" />
+                            <h5 class="text-mainColor fs-6 fw-bold">Gary Steven</h5>
+                            <p class="fs-14">Philadelphia</p>
+                            <ul class="list-inline d-flex justify-content-end gap-1">
+                                <li class="list-inline-item m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="far fa-star fa-xs text-mainColor"></i>
+                                </li>
+                            </ul>
+                            <i class="fa-solid fa-quote-left text-mainColor fs-3"></i>
+                            <p class="fs-14 w-50">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis
+                                donec, suscipit tortor et sapien donec.</p>
+                        </div>
+
+                        <div class="swiper-slide d-flex flex-column align-items-center justify-content-center ">
+                            <img src="./assests/img/clients/c-3.jpg" class="rounded-circle mb-2" />
+                            <h5 class="text-mainColor fs-6 fw-bold">Cristy Mayer</h5>
+                            <p class="fs-14">San Francisco</p>
+                            <ul class="list-inline d-flex justify-content-end gap-1">
+                                <li class="list-inline-item m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                            </ul>
+                            <i class="fa-solid fa-quote-left text-mainColor fs-3"></i>
+                            <p class="fs-14 w-50">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis
+                                donec, suscipit tortor et sapien donec.</p>
+                        </div>
+
+                        <div class="swiper-slide d-flex flex-column align-items-center justify-content-center ">
+                            <img src="./assests/img/clients/c-4.jpg" class="rounded-circle mb-2" />
+                            <h5 class="text-mainColor fs-6 fw-bold">Ichiro Tasaka</h5>
+                            <p class="fs-14">Houston</p>
+                            <ul class="list-inline d-flex justify-content-end gap-1">
+                                <li class="list-inline-item m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="fas fa-star fa-xs text-mainColor"></i>
+                                </li>
+                                <li class="list-inline-item  m-0">
+                                    <i class="far fa-star fa-xs text-mainColor"></i>
+                                </li>
+                            </ul>
+                            <i class="fa-solid fa-quote-left text-mainColor fs-3"></i>
+                            <p class="fs-14 w-50">Lorem ipsum dolor sit amet, ligula magna at etiam aliquip venenatis. Vitae sit felis
+                                donec, suscipit tortor et sapien donec.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+        <div class="container-fluid pt-5 pb-5 text-center">
+          <h2 class="mb-4"><span class=text-mainColor>OUR</span> PARTNERS</h2>
+          <p>The Companies That Represent Us</p>
+
+          <!-- Slider main container -->
+          <div class="swiper swiper3 ms-5">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img src="./assests/img/partners/p-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assests/img/partners/p-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assests/img/partners/p-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assests/img/partners/p-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assests/img/partners/p-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assests/img/partners/p-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assests/img/partners/p-1.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 d-flex gap-4 flex-column">
+                    <div>
+                        <img src="./assests/img/footer/logo-footer.svg" width="180px" />
+                    </div>
+                    <p class="fs-15">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
+                        incidunt architecto soluta laboriosam, perspiciatis, aspernatur
+                        officiis esse.
+                    </p>
+                    <div>
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-location-dot fa-sm" style="color: #ff385c"></i>
+                            <p class="fs-15">95 South Park Avenue, USA</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-phone fa-sm" style="color: #ff385c"></i>
+                            <p class="fs-15">+456 875 369 208</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="fa-solid fa-envelope fa-sm" style="color: #ff385c"></i>
+                            <p class="fs-15">support@findhouses.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fw-bold text-white border-mainColor fs-18 mb-4 navigation">
+                        Navigation
+                    </h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="col-12">
+                                <li class="border-dotted fs-14">Home One</li>
+                                <li class="border-dotted fs-14">Properties Right</li>
+                                <li class="border-dotted fs-14">Properties List</li>
+                                <li class="border-dotted fs-14">Property Detail</li>
+                                <li class="border-dotted fs-14">Agents Listing</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li class="border-dotted fs-14">Agents Details</li>
+                                <li class="border-dotted fs-14">About Us</li>
+                                <li class="border-dotted fs-14">Blog Default</li>
+                                <li class="border-dotted fs-14">Blog Details</li>
+                                <li class="border-dotted fs-14">Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fw-bold text-white fs-18 mb-4 twitter">Twitter Feeds</h5>
+                    <div>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex gap-1">
+                                <i class="fa-brands fa-twitter fa-sm" style="color: #ff385c"></i>
+                                <p class="fs-14">
+                                    <a href="#">@Findhouses</a>
+                                    All share them with me baby said inspet.
+                                </p>
+                            </div>
+                            <p class="text-mainColor fw-bold fs-15 ms-4">
+                                about 5 days ago
+                            </p>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                            <div class="d-flex gap-1">
+                                <i class="fa-brands fa-twitter fa-sm" style="color: #ff385c"></i>
+                                <p class="fs-14">
+                                    <a href="#">@Findhouses</a>
+                                    All share them with me baby said inspet.
+                                </p>
+                            </div>
+                            <p class="text-mainColor fw-bold fs-15 ms-4">
+                                about 5 days ago
+                            </p>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                            <div class="d-flex gap-1">
+                                <i class="fa-brands fa-twitter fa-sm" style="color: #ff385c"></i>
+                                <p class="fs-14">
+                                    <a href="#">@Findhouses</a>
+                                    All share them with me baby said inspet.
+                                </p>
+                            </div>
+                            <p class="text-mainColor fw-bold fs-15 ms-4">
+                                about 5 days ago
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <h5 class="fw-bold text-white fs-18 mb-4 newsletters">
+                        Newsletters
+                    </h5>
+                    <p class="mb-4">
+                        Sign Up for Our Newsletter to get Latest Updates and Offers.
+                        Subscribe to receive news in your inbox.
+                    </p>
+                    <form class="d-flex">
+                        <input type="email" placeholder="Enter Your Email" class="p-2 email-input" />
+                        <button class="btn-mainColor subscribe fs-14">SUBSCRIBE</button>
+                    </form>
+                </div>
+
+                <div class="border-top border-dark-subtle d-flex footer-nav pt-4 flex-wrap justify-content-between">
+                    <p class="text-white fs-14 mt-2">
+                        2021 © Copyright - All Rights Reserved.
+                    </p>
+                    <div class="d-flex gap-4 icons me-5">
+                        <a href="#" class="mt-2"><i class="fa-brands fa-facebook-f" style="color: #ffffff"></i></a>
+                        <a href="#" class="twitter-a"><i class="fa-brands fa-twitter" style="color: #ffffff"></i></a>
+                        <a href="#" class="mt-2"><i class="fa-brands fa-instagram" style="color: #ffffff"></i></a>
+                        <a href="#" class="mt-2"><i class="fa-brands fa-youtube" style="color: #ffffff"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.9.0/countUp.umd.js"
+        integrity="sha512-26fzZc72r4zIoOwlOOJa/7EBtBXyjgZA6PS9CMT+gJWu5ZL1WLxWw1pKROXbKPJJdcG8N+GhqBoUXZ5NTEs3pw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assests/js/about.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+.heading{
+    background: linear-gradient(rgba(18, 27, 34, 0.6), rgba(18, 27, 34, 0.6)), url("https://code-theme.com/html/findhouses/images/bg/bg-details.jpg") no-repeat center center;
+    height: 30vh;
+}
+.heading a{
+    color: #fff;
+    transition: color .4s;
+}
+.heading a:hover{
+    color: var(--mainColor);
+}
+.main{
+    padding: 50px 100px;
+}
+.contact-details{
+    background-size: cover;
+    background: linear-gradient(rgba(32, 51, 100, 0.8), rgba(32, 51, 100, 0.8)), url("https://code-theme.com/html/findhouses/images/bg/bg-testimonials.jpg") no-repeat center center;
+}
+.title::after{
+     display: block;
+    height: 3px;
+    font-weight: bold;
+    background-color: #fff;
+    content: " ";
+    width: 50px;
+    margin-top: .5rem;
+    
+}

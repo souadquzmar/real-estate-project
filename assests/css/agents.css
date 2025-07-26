@@ -1,0 +1,77 @@
+.main{
+    background-color: #f5f7fb;
+}
+.name{
+    color: black;
+    transition: .4s;
+}
+.name:hover{
+    color: var(--mainColor);
+}
+.listings{
+    color: var(--mainColor);
+    transition: .4s;
+}
+.listings:hover{
+    color: #262626;
+}
+.carousel-control-prev,
+.carousel-control-next{
+  top: -260px;
+  opacity: 1;
+}
+.carousel-control-prev{
+  left: 200px;
+}
+.carousel-control-prev-icon{
+background-image: url("https://www.svgrepo.com/show/521480/arrow-prev.svg");
+
+}
+.carousel-control-next-icon{
+  background-image: url("https://www.svgrepo.com/show/521477/arrow-next.svg");
+}
+.bg-green{
+  background-color: #18ba60;
+}
+.carousel .span-1{
+  padding: 5px 15px;
+  margin: 10px;
+}
+.carousel .span-2{
+  padding: 5px 10px;
+  margin: 10px;
+  right: 0;
+  font-size: 14px;
+}
+.bg-purple{
+  background-color: #6449E7;
+}
+.carousel .span-3{
+  top: 130px;
+  left: 20px;
+  transition: .6s;
+}
+.carousel .span-4{
+  top: 170px;
+  left: 20px;
+  transition: .6s;
+}
+.list-hidden{
+  background-color: var(--mainColor);
+  opacity: 0;
+  visibility: 0;
+  transition: .6s;
+}
+.h-30{
+  height: 30%;
+}
+.carousel-item:hover .list-hidden{
+  opacity: 1;
+  visibility: 1;
+}
+.carousel-item:hover .span-3{
+  top: 80px;
+}
+.carousel-item:hover .span-4{
+  top: 120px;
+}

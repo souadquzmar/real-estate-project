@@ -1,0 +1,48 @@
+.heading{
+    background: linear-gradient(rgba(18, 27, 34, 0.6), rgba(18, 27, 34, 0.6)), url("https://code-theme.com/html/findhouses/images/bg/bg-details.jpg") no-repeat center center;
+    height: 30vh;
+}
+.heading a{
+    color: #fff;
+    transition: color .4s;
+}
+.blogs a{
+    text-decoration: none;
+    color: #000;
+    transition: color .4s;
+}
+.heading a:hover{
+    color: var(--mainColor);
+}
+.blogs a:hover{
+    color: var(--mainColor);
+}
+.margin{
+    margin-top: 2px;
+    padding-right: 5px;
+}
+.blogs .card-text a{
+    color: var(--mainColor);
+    transition: color .4s;
+}
+.blogs .card-text a:hover{
+    color: #000;
+}
+.card{
+    width: 22rem;
+}
+@media screen and (max-width:1400px){
+    .card{
+    width: 20rem;
+}
+}
+@media screen and (max-width:1100px){
+    .card{
+    width: 18rem;
+}
+}
+@media screen and (max-width:991px){
+    .card{
+    width: 22rem;
+}
+}
